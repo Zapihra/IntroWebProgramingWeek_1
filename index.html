@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-	<title>Parcel Sandbox</title>
-	<meta charset="UTF-8" />
-</head>
+<h1 id="hello">Hello World</h1>
+
+<button id="my-button" type="button" onclick="buttonFunc()">button</button>
+
+<script type="text/javascript">
+	function buttonFunc() {
+		console.log("hello world");
+		document.getElementById("hello").innerHTML = "My notebook";
+	}
+</script>
+
 
 <body>
-	<div id="app"></div>
+	<ul id="ul-list"></ul>
 
-	<script src="src/index.js">
+	<button id="add-data" type="button" onclick="button2()">second button</button>
+
+<!-- some parts taken from https://www.w3schools.com/jsref/met_node_appendchild.asp-->
+	<script type="text/javascript">
+		function button2() {
+			const node = document.createElement("li");
+			const text = document.getElementById("text").value;
+			const textnode = document.createTextNode(text);
+			
+			node.appendChild(textnode);
+			document.getElementById("ul-list").appendChild(node);
+		}
 	</script>
+
+	<textarea id="text"></textarea>
 </body>
 
 </html>

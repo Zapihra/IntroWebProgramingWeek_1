@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<h1 id="hello">Hello World</h1>
+
+<button id="my-button" type="button" onclick="buttonFunc()">button</button>
+
+<script>function buttonFunc() {
+  console.log("hello world");
+  document.getElementById("hello").innerHTML = "My notebook";
+}</script>
+
+
+<body>
+	<ul id="ul-list"></ul>
+
+	<button id="add-data" type="button" onclick="button2()">second button</button>
+
+<!-- some parts taken from https://www.w3schools.com/jsref/met_node_appendchild.asp-->
+	<script>function button2() {
+  var node = document.createElement("li");
+  var text = document.getElementById("text").value;
+  var textnode = document.createTextNode(text);
+  node.appendChild(textnode);
+  document.getElementById("ul-list").appendChild(node);
+}</script>
+
+	<textarea id="text"></textarea>
+</body>
+
+</html>
